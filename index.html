@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script defer src="js/game.js"></script>
+        <title>Coastal Systems Project</title>
+    </head>
+    <body>
+        <div class="game">
+            <div class="column">
+                <div id="word-bank">
+                    <p>LOREM IPSUM</p>
+                    <p>DOLOR</p>
+                    <p>SIT AMET</p>
+                </div>
+            </div>
+            <div class="column primary-column">
+                <div class="species-viewport">
+                    <h1>What Am I?</h1>
+                    <canvas id="species-image" width="1000" height="1000"></canvas>
+                    <input type="text" id="answer" placeholder="Answer here" />
+                    <div class="bottom-controls">
+                        <input id="submit-answer" type="button" value="Submit" />
+                        <div id="go-back">&lt;</div>
+                        <div id="go-next">&gt;</div>
+                    </div>
+                </div>
+            </div>
+            <div id="good-modal" class="column modal">
+                <div class="modal-content">
+                    <div id="modal-close">X</div>
+                    <h1 class="modal-header">Great job!</h1>
+                    <div id="species-nomen"></div>
+                    <div id="species-description" class="modal-body"></div>
+                </div>
+            </div>
+            <div id="modal-show">^</div>
+        </div>
+    </body>
+</html>
