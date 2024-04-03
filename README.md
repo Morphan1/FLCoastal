@@ -3,4 +3,6 @@
 ## FMNP Coastal Systems Project
 A simple browser guessing game showing coastal diversity in Florida.
 
-Connor Branan and Kiera Cardamone
+[Link to deployed page](https://morphan1.github.io/FLCoastal)
+
+by Connor Branan and Kiera Cardamone

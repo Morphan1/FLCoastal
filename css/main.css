@@ -14,6 +14,11 @@ body {
     text-align: center;
 }
 
+.links {
+    float: right;
+    padding: 20px;
+}
+
 .game::before {
     content: "";
     position: fixed;
