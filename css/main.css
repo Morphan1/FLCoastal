@@ -62,6 +62,10 @@ body {
         padding-top: 5px;
     }
 
+.good-word {
+    text-decoration: line-through;
+}
+
 .species-viewport {
     display: block;
     margin-left: auto;

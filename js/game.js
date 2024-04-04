@@ -147,8 +147,8 @@ var speciesNomen = document.getElementById("species-nomen");
                 answerInput.value = name.toLowerCase();
             },
 
-            addNameToBank: function() {
-                wordBank.innerHTML += "<p>" + scrambledName + "</p>";
+            addNameToBank: function(id) {
+                wordBank.innerHTML += "<p id=\"wb-" + id + "\">" + scrambledName + "</p>";
             }
         };
     }
@@ -226,7 +226,7 @@ var speciesNomen = document.getElementById("species-nomen");
     }
 
     for (var i = 0; i < wordBankIndex.length; i++) {
-        speciesList[wordBankIndex[i]].addNameToBank();
+        speciesList[wordBankIndex[i]].addNameToBank(i);
     }
 
     var currentSpecies = 0;
@@ -241,7 +241,11 @@ var speciesNomen = document.getElementById("species-nomen");
 
     game.checkAnswer = function(input) {
         if (!successStatus[currentSpecies].success) {
-            successStatus[currentSpecies] = speciesList[currentSpecies].checkAnswer(input);
+            var result = speciesList[currentSpecies].checkAnswer(input);
+            if (result.success) {
+                document.getElementById("wb-" + wordBankIndex.indexOf(currentSpecies)).classList.add("good-word");
+            }
+            successStatus[currentSpecies] = result;
         }
         return successStatus[currentSpecies];
     }
