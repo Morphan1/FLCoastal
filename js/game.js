@@ -38,7 +38,8 @@ var speciesNomen = document.getElementById("species-nomen");
     function Species(_names, _description, _image, stages) {
         var names = atob(_names).split(","); 
         var name = names[0];
-        var nomen = names[1];
+        var scrambledName = names[1];
+        var nomen = names[2];
         var description = atob(_description);
 
         var ready = false;
@@ -147,50 +148,50 @@ var speciesNomen = document.getElementById("species-nomen");
             },
 
             addNameToBank: function() {
-                wordBank.innerHTML += "<p>" + name + "</p>";
+                wordBank.innerHTML += "<p>" + scrambledName + "</p>";
             }
         };
     }
 
     var speciesList = [
         Species(
-            "RU5FU09PVEJMVCBMSURITk9QLFR1cnNpb3BzIHRydW5jYXR1cyxkb2xwaGluLHR1cnNpb3BzIHRydW5jYXR1cyxib3R0bGVub3NlLGJvdHRsZW5vc2UgZG9scGhpbixjb21tb24gYm90dGxlbm9zZSxjb21tb24gYm90dGxlbm9zZSBkb2xwaGluLGJvdHRsZW5vc2VkLGJvdHRsZW5vc2VkIGRvbHBoaW4sY29tbW9uIGJvdHRsZW5vc2VkLGNvbW1vbiBib3R0bGVub3NlZCBkb2xwaGluLGJvdHRsZS1ub3NlLGJvdHRsZS1ub3NlIGRvbHBoaW4sY29tbW9uIGJvdHRsZS1ub3NlLGNvbW1vbiBib3R0bGUtbm9zZSBkb2xwaGluLGJvdHRsZS1ub3NlZCxib3R0bGUtbm9zZWQgZG9scGhpbixjb21tb24gYm90dGxlLW5vc2VkLGNvbW1vbiBib3R0bGUtbm9zZWQgZG9scGhpbg==",
+            "Qk9UVExFTk9TRSBET0xQSElOLEVORVNPT1RCTFQgTElESE5PUCxUdXJzaW9wcyB0cnVuY2F0dXMsZG9scGhpbix0dXJzaW9wcyB0cnVuY2F0dXMsYm90dGxlbm9zZSxib3R0bGVub3NlIGRvbHBoaW4sY29tbW9uIGJvdHRsZW5vc2UsY29tbW9uIGJvdHRsZW5vc2UgZG9scGhpbixib3R0bGVub3NlZCxib3R0bGVub3NlZCBkb2xwaGluLGNvbW1vbiBib3R0bGVub3NlZCxjb21tb24gYm90dGxlbm9zZWQgZG9scGhpbixib3R0bGUtbm9zZSxib3R0bGUtbm9zZSBkb2xwaGluLGNvbW1vbiBib3R0bGUtbm9zZSxjb21tb24gYm90dGxlLW5vc2UgZG9scGhpbixib3R0bGUtbm9zZWQsYm90dGxlLW5vc2VkIGRvbHBoaW4sY29tbW9uIGJvdHRsZS1ub3NlZCxjb21tb24gYm90dGxlLW5vc2VkIGRvbHBoaW4=",
             "UGVyaGFwcyB0aGUgbW9zdCB3ZWxsLWtub3duIG1hcmluZSBtYW1tYWwsIHRoZSBjb21tb24gYm90dGxlbm9zZSBkb2xwaGluIGNhbiBiZSBmb3VuZCBpbiB0ZW1wZXJhdGUgYW5kIHRyb3BpY2FsIHdhdGVycyB3b3JsZHdpZGUu",
             "aW1hZ2VzL1ltOTBkR3hsYm05elpTQmtiMnh3YUdsdS5qcGc=",
             [ Stage(1000, 450, 250), Stage(900, 350, 500), Stage(700, 100, 1000) ]
         ),
         Species(
-            "U1JZRU9QLFBhbmRpb24gaGFsaWFldHVzLG9zcHJleSxwYW5kaW9uIGhhbGlhZXR1cyxmaXNoIGhhd2ssc2VhIGhhd2sscml2ZXIgaGF3aw==",
+            "T1NQUkVZLFNSWUVPUCxQYW5kaW9uIGhhbGlhZXR1cyxvc3ByZXkscGFuZGlvbiBoYWxpYWV0dXMsZmlzaCBoYXdrLHNlYSBoYXdrLHJpdmVyIGhhd2s=",
             "Rm91bmQgd29ybGR3aWRlLCB0aGUgb3NwcmV5IGlzIHRoZSBzb2xlIG1lbWJlciBvZiB0aGUgZmFtaWx5IFBhbmRpb25pZGFlLiBJdCBpcyBoaWdobHkgYWRhcHRlZCBmb3IgZWF0aW5nIGZpc2gsIHdoaWNoIG1ha2VzIHVwIG5lYXJseSBpdHMgZW50aXJlIGRpZXQu",
             "aW1hZ2VzL2IzTndjbVY1LmpwZw==",
             [ Stage(1100, 1036, 250), Stage(1020, 870, 500), Stage(0, 0, 2500) ]
         ),
         Species(
-            "R0lOUi1MQkVESUwgTFVMRyxMYXJ1cyBkZWxhd2FyZW5zaXMsZ3VsbCxsYXJ1cyBkZWxhd2FyZW5zaXMscmluZyBiaWxsZWQgZ3VsbCxyaW5nLWJpbGxlZCBndWxsLHJpbmdiaWxsZWQgZ3VsbCxzZWEgZ3VsbCxzZWFndWxsLHBhcmtpbmcgbG90IGd1bGwscGFya2luZ2xvdCBndWxsLHBhcmtpbmdsb3RndWxsLHNlYWd1bGwgYnJv",
+            "UklORy1CSUxMRUQgR1VMTCxHSU5SLUxCRURJTCBMVUxHLExhcnVzIGRlbGF3YXJlbnNpcyxndWxsLGxhcnVzIGRlbGF3YXJlbnNpcyxyaW5nLWJpbGxlZCBndWxsLHJpbmcgYmlsbGVkIGd1bGwscmluZ2JpbGxlZCBndWxsLHNlYSBndWxsLHNlYWd1bGwscGFya2luZyBsb3QgZ3VsbCxwYXJraW5nbG90IGd1bGwscGFya2luZ2xvdGd1bGwsc2VhZ3VsbCBicm8=",
             "VGhlIHJpbmctYmlsbGVkIGd1bGwgaXMgd2VsbC1hZGFwdGVkIHRvIGh1bWFuLWRpc3R1cmJlZCBhcmVhcy4gSXQgdGVuZHMgdG8gYmUgcHJldHR5IGNvbWZvcnRhYmxlIGFyb3VuZCBwZW9wbGU7IGJlIG1pbmRmdWwgd2l0aCBhbnkgZm9vZCB5b3UgaGF2ZSE=",
             "aW1hZ2VzL2NtbHVaeTFpYVd4c1pXUWdaM1ZzYkE9PS5qcGc=",
             [ Stage(1350, 570, 250), Stage(1200, 230, 500), Stage(410, 0, 1568) ]
         ),
         Species(
-            "QVRTUkVPRSBOT0xJUFNMT0IsUGxhdGFsZWEgYWphamEsc3Bvb25iaWxsLHBsYXRhbGVhIGFqYWphLHJvc2VhdGUgc3Bvb25iaWxs",
+            "Uk9TRUFURSBTUE9PTkJJTEwsQVRTUkVPRSBOT0xJUFNMT0IsUGxhdGFsZWEgYWphamEsc3Bvb25iaWxsLHBsYXRhbGVhIGFqYWphLHJvc2VhdGUgc3Bvb25iaWxs",
             "U2ltaWxhciB0byBmbGFtaW5nb3MsIHRoZSByb3NlYXRlIHNwb29uYmlsbCB0dXJucyBwaW5rIHdpdGggaXRzIGRpZXQuIEhvd2V2ZXIsIGl0IGlzIGFjdHVhbGx5IGEgcGFydCBvZiB0aGUgaWJpcyBmYW1pbHku",
             "aW1hZ2VzL2NtOXpaV0YwWlNCemNHOXZibUpwYkd3PS5qcGc=",
             [ Stage(1924, 1070, 300), Stage(1720, 940, 1000), Stage(420, 0, 2800) ]
         ),
         Species(
-            "TUlSQ0FFTkEgUkxJT0NERUNPLENyb2NvZHlsdXMgYWN1dHVzLGNyb2NvZGlsZSxjcm9jb2R5bHVzIGFjdXR1cyxhbWVyaWNhbiBjcm9jb2RpbGUsY3JvYw==",
+            "QU1FUklDQU4gQ1JPQ09ESUxFLE1JUkNBRU5BIFJMSU9DREVDTyxDcm9jb2R5bHVzIGFjdXR1cyxjcm9jb2RpbGUsY3JvY29keWx1cyBhY3V0dXMsYW1lcmljYW4gY3JvY29kaWxlLGNyb2M=",
             "VGhhdCdzIHJpZ2h0LCBjcm9jb2RpbGVzIGNhbiBlbmQgdXAgb24gb3VyIGJlYWNoISBJbiBGbG9yaWRhLCB0aGUgQW1lcmljYW4gY3JvY29kaWxlIGhhcyBwb3B1bGF0aW9ucyBtb3N0bHkgYXJvdW5kIHRoZSBzb3V0aGVybiBjb2FzdCwgYnV0IGhhcyBiZWVuIHNwb3R0ZWQgYXMgZmFyIG5vcnRoIGFzIFRhbXBhIEJheSBpbiB0aGUgR3VsZiBhbmQgQnJldmFyZCBDb3VudHkgb24gdGhlIGVhc3QgY29hc3QsIGxpa2VseSBkdWUgdG8gY2hhbmdpbmcgY2xpbWF0ZS4=",
             "aW1hZ2VzL1lXMWxjbWxqWVc0Z1kzSnZZMjlrYVd4bC5qcGc=",
             [ Stage(695, 1335, 1300), Stage(850, 500, 2500), Stage(1932, 0, 4500) ]
         ),
         Species(
-            "V0JOUk8gTEFFUElOQyxQZWxlY2FudXMgb2NjaWRlbnRhbGlzLHBlbGljYW4scGVsZWNhbnVzIG9jY2lkZW50YWxpcyxicm93biBwZWxpY2Fu",
+            "QlJPV04gUEVMSUNBTixXQk5STyBMQUVQSU5DLFBlbGVjYW51cyBvY2NpZGVudGFsaXMscGVsaWNhbixwZWxlY2FudXMgb2NjaWRlbnRhbGlzLGJyb3duIHBlbGljYW4=",
             "V2l0aCBhIDcgZm9vdCB3aW5nc3BhbiwgdGhlIGJyb3duIHBlbGljYW4gaXMgc3RpbGwgdGhlIHNtYWxsZXN0IHNwZWNpZXMgb2YgcGVsaWNhbi4=",
             "aW1hZ2VzL1luSnZkMjRnY0dWc2FXTmhiZz09LmpwZw==",
             [ Stage(1517, 1086, 450), Stage(1250, 800, 800), Stage(300, 200, 2000) ]
         ),
         Species(
-            "RVJFTkcgRVNBIFVMVFJFVCxDaGVsb25pYSBteWRhcyx0dXJ0bGUsY2hlbG9uaWEgbXlkYXMsZ3JlZW4gdHVydGxlLHNlYSB0dXJ0bGUsZ3JlZW4gc2VhIHR1cnRsZSxzZWF0dXJ0bGUsZ3JlZW4gc2VhdHVydGxlLGJsYWNrIHR1cnRsZSxibGFjayBzZWF0dXJ0bGUsYmxhY2sgc2VhIHR1cnRsZSxhdGxhbnRpYyBncmVlbiB0dXJ0bGUsYXRsYW50aWMgZ3JlZW4gc2VhIHR1cnRsZSxhdGxhbnRpYyBncmVlbiBzZWF0dXJ0bGUscGFjaWZpYyBncmVlbiB0dXJ0bGUscGFjaWZpYyBncmVlbiBzZWEgdHVydGxlLHBhY2lmaWMgZ3JlZW4gc2VhdHVydGxl",
+            "R1JFRU4gU0VBIFRVUlRMRSxFUkVORyBFU0EgVUxUUkVULENoZWxvbmlhIG15ZGFzLHR1cnRsZSxjaGVsb25pYSBteWRhcyxncmVlbiB0dXJ0bGUsc2VhIHR1cnRsZSxncmVlbiBzZWEgdHVydGxlLHNlYXR1cnRsZSxncmVlbiBzZWF0dXJ0bGUsYmxhY2sgdHVydGxlLGJsYWNrIHNlYSB0dXJ0bGUsYmxhY2sgc2VhdHVydGxlLGF0bGFudGljIGdyZWVuIHR1cnRsZSxhdGxhbnRpYyBncmVlbiBzZWEgdHVydGxlLGF0bGFudGljIGdyZWVuIHNlYXR1cnRsZSxwYWNpZmljIGdyZWVuIHR1cnRsZSxwYWNpZmljIGdyZWVuIHNlYSB0dXJ0bGUscGFjaWZpYyBncmVlbiBzZWF0dXJ0bGU=",
             "VGhlIGdyZWVuIHNlYSB0dXJ0bGUgaXMgdGhlIGxhcmdlc3Qgc2hlbGxlZCB0dXJ0bGUgYW5kIHRoZSBvbmx5IHNvbGVseSBoZXJiaXZvcm91cyB0dXJ0bGUuIEl0cyBkaWV0IG9mIG1vc3RseSBzZWFncmFzcyBhbmQgYWxnYWUgbWFrZXMgaXRzIGZhdCB0aGUgZXBvbnltb3VzIGdyZWVuIGNvbG9yLg==",
             "aW1hZ2VzL1ozSmxaVzRnYzJWaElIUjFjblJzWlE9PS5qcGc=",
             [ Stage(2550, 1802, 350), Stage(2400, 1650, 800), Stage(330, 430, 3200) ]
