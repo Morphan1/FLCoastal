@@ -85,7 +85,7 @@ var speciesNomen = document.getElementById("species-nomen");
             }
             var diff = Stage((target.x - lastTarget.x) / 100, (target.y - lastTarget.y) / 100, (target.size - lastTarget.size) / 100);
             var newPosition = Stage(currentPosition.x + diff.x, currentPosition.y + diff.y, currentPosition.size + diff.size);
-            if (Math.abs(newPosition.x - target.x) < Math.abs(diff.x) && Math.abs(newPosition.y - target.y) < Math.abs(diff.y) && Math.abs(newPosition.size - target.size) < Math.abs(diff.size)) {
+            if (Math.abs(newPosition.x - target.x) <= Math.abs(diff.x) && Math.abs(newPosition.y - target.y) <= Math.abs(diff.y) && Math.abs(newPosition.size - target.size) <= Math.abs(diff.size)) {
                 setPosition(target);
                 lastTarget = target;
                 target = null;
