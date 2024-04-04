@@ -120,6 +120,9 @@ body {
 #go-next, #go-back {
     font-size: 72px;
     font-weight: bold;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
     #go-next:hover, #go-next:focus,
