@@ -1,6 +1,8 @@
 "use strict";
 
 var canvas = document.getElementById("species-image");
+var context = canvas.getContext("2d");
+context.imageSmoothingEnabled = false;
 
 var wordBank = document.getElementById("word-bank");
 
@@ -17,6 +19,9 @@ var modalClose = document.getElementById("modal-close");
 var modalShow = document.getElementById("modal-show");
 var speciesDescription = document.getElementById("species-description");
 var speciesNomen = document.getElementById("species-nomen");
+
+var preloadCanvas = document.createElement("canvas");
+var preloadContext = preloadCanvas.getContext("2d");
 
 (function(game, undefined) {
     function Result(success, nomen, description) {
@@ -45,6 +50,7 @@ var speciesNomen = document.getElementById("species-nomen");
         var ready = false;
         var image = new Image();
         image.onload = function() {
+            preloadContext.drawImage(image, 0, 0);
             ready = true;
         };
         image.src = atob(_image);
@@ -64,10 +70,8 @@ var speciesNomen = document.getElementById("species-nomen");
         }
 
         function setPosition(position) {
-            var context = canvas.getContext('2d');
             context.canvas.width = position.size;
             context.canvas.height = position.size;
-            context.imageSmoothingEnabled = false;
             context.drawImage(image, position.x, position.y, position.size, position.size, 0, 0, position.size, position.size);
             currentPosition = position;
         }
