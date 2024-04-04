@@ -141,12 +141,12 @@ var speciesNomen = document.getElementById("species-nomen");
         ),
         Species(
             "T1NQUkVZLFBhbmRpb24gaGFsaWFldHVzLG9zcHJleSxwYW5kaW9uIGhhbGlhZXR1cyxmaXNoIGhhd2ssc2VhIGhhd2sscml2ZXIgaGF3aw==",
-            "Rm91bmQgd29ybGR3aWRlLCB0aGUgb3NwcmV5IGlzIHRoZSBzb2xlIG1lbWJlciBvZiBpdHMgZmFtaWx5IFBhbmRpb25pZGFlLiBJdCBpcyBoaWdobHkgYWRhcHRlZCBmb3IgZWF0aW5nIGZpc2gsIHdoaWNoIG1ha2VzIHVwIG5lYXJseSBpdHMgZW50aXJlIGRpZXQu",
+            "Rm91bmQgd29ybGR3aWRlLCB0aGUgb3NwcmV5IGlzIHRoZSBzb2xlIG1lbWJlciBvZiB0aGUgZmFtaWx5IFBhbmRpb25pZGFlLiBJdCBpcyBoaWdobHkgYWRhcHRlZCBmb3IgZWF0aW5nIGZpc2gsIHdoaWNoIG1ha2VzIHVwIG5lYXJseSBpdHMgZW50aXJlIGRpZXQu",
             "aW1hZ2VzL2IzTndjbVY1LmpwZw==",
             [ Stage(1100, 1036, 250), Stage(1020, 870, 500), Stage(0, 0, 2500) ]
         ),
         Species(
-            "UklORy1CSUxMRUQgR1VMTCxMYXJ1cyBkZWxhd2FyZW5zaXMsZ3VsbCxsYXJ1cyBkZWxhd2FyZW5zaXMscmluZyBiaWxsZWQgZ3VsbCxyaW5nLWJpbGxlZCBndWxsLHJpbmdiaWxsZWQgZ3VsbCxzZWEgZ3VsbCxzZWFndWxsLHBhcmtpbmcgbG90IGd1bGwscGFya2luZ2xvdCBndWxsLHBhcmtpbmdsb3RndWxs",
+            "UklORy1CSUxMRUQgR1VMTCxMYXJ1cyBkZWxhd2FyZW5zaXMsZ3VsbCxsYXJ1cyBkZWxhd2FyZW5zaXMscmluZyBiaWxsZWQgZ3VsbCxyaW5nLWJpbGxlZCBndWxsLHJpbmdiaWxsZWQgZ3VsbCxzZWEgZ3VsbCxzZWFndWxsLHBhcmtpbmcgbG90IGd1bGwscGFya2luZ2xvdCBndWxsLHBhcmtpbmdsb3RndWxsLHNlYWd1bGwgYnJv",
             "VGhlIHJpbmctYmlsbGVkIGd1bGwgaXMgd2VsbC1hZGFwdGVkIHRvIGh1bWFuLWRpc3R1cmJlZCBhcmVhcy4gSXQgdGVuZHMgdG8gYmUgcHJldHR5IGNvbWZvcnRhYmxlIGFyb3VuZCBwZW9wbGU7IGJlIG1pbmRmdWwgd2l0aCBhbnkgZm9vZCB5b3UgaGF2ZSE=",
             "aW1hZ2VzL2NtbHVaeTFpYVd4c1pXUWdaM1ZzYkE9PS5qcGc=",
             [ Stage(1350, 570, 250), Stage(1200, 230, 500), Stage(410, 0, 1568) ]
