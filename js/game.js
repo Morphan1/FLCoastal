@@ -24,6 +24,9 @@ var modalShow = document.getElementById("modal-show");
 var speciesDescription = document.getElementById("species-description");
 var speciesNomen = document.getElementById("species-nomen");
 
+var infoButton = document.getElementById("info-button");
+var infoBox = document.getElementById("info-box");
+
 var preloadCanvas = document.createElement("canvas");
 var preloadContext = preloadCanvas.getContext("2d");
 
@@ -416,5 +419,15 @@ modalShow.onclick = function(event) {
     goodModal.style.display = "block";
     modalShow.style.display = "none";
 }
+
+infoButton.addEventListener("click", function(event) {
+    infoBox.style.display = "block";
+});
+
+infoBox.addEventListener("click", function(event) {
+    if (event.target === infoBox) {
+        infoBox.style.display = "none";
+    }
+});
 
 game.show();

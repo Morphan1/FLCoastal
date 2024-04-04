@@ -254,13 +254,35 @@ body {
 
 .modal {
     display: none;
-    z-index: 1;
+    z-index: 3;
     overflow: auto;
 }
 
 .modal-content {
     position: fixed;
-    /*border: 1px solid #8e7656;*/
+    z-index: 4;
+}
+
+#info-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #00000066;
+}
+
+#info-box .modal-content {
+    left: 20%;
+    top: 12.5%;
+    width: 60%;
+    height: 75%;
+    background-color: #deb887;
+}
+
+#vert-fmnp {
+    display: none;
+}
+
+#good-modal .modal-content {
     right: 0;
     top: 25%;
     width: 25%;
@@ -318,6 +340,18 @@ body {
 
 /* very basic support for mobile functionality (not pretty) */
 @media only screen and (max-width: 750px) {
+    #horz-fmnp {
+        display: none;
+    }
+
+    #vert-fmnp {
+        display: block;
+    }
+
+    #info-box .modal-content {
+        overflow: auto;
+    }
+
     #title-screen {
         margin-top: 32px;
     }
@@ -344,7 +378,7 @@ body {
         font-size: 12px;
     }
 
-    .modal-content {
+    #good-modal .modal-content {
         top: auto;
         right: auto;
         bottom: 0;
