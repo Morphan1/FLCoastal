@@ -195,6 +195,18 @@ var speciesNomen = document.getElementById("species-nomen");
             "VGhlIGdyZWVuIHNlYSB0dXJ0bGUgaXMgdGhlIGxhcmdlc3Qgc2hlbGxlZCB0dXJ0bGUgYW5kIHRoZSBvbmx5IHNvbGVseSBoZXJiaXZvcm91cyB0dXJ0bGUuIEl0cyBkaWV0IG9mIG1vc3RseSBzZWFncmFzcyBhbmQgYWxnYWUgbWFrZXMgaXRzIGZhdCB0aGUgZXBvbnltb3VzIGdyZWVuIGNvbG9yLg==",
             "aW1hZ2VzL1ozSmxaVzRnYzJWaElIUjFjblJzWlE9PS5qcGc=",
             [ Stage(2550, 1802, 350), Stage(2400, 1650, 800), Stage(330, 430, 3200) ]
+        ),
+        Species(
+            "TEVBU1QgU0FORFBJUEVSLFRBU0xFIERJUkFQTlNFUCxDYWxpZHJpcyBtaW51dGlsbGEsc2FuZHBpcGVyLGNhbGlkcmlzIG1pbnV0aWxsYSxsZWFzdCBzYW5kcGlwZXIscGVlcCxwZWVwcw==",
+            "VGhlIHdvcmxkJ3Mgc21hbGxlc3Qgc2hvcmViaXJkLCB3ZWlnaGluZyBpbiBhdCBvbmx5IG9uZSBvdW5jZSwgdGhlIGxlYXN0IHNhbmRwaXBlciEgKmFpcmhvcm4gbm9pc2VzKg==",
+            "aW1hZ2VzL2JHVmhjM1FnYzJGdVpIQnBjR1Z5LmpwZw==",
+            [ Stage(2079, 1006, 400), Stage(1751, 769, 800), Stage(1293, 285, 2000) ]
+        ),
+        Species(
+            "U05PV1kgUExPVkVSLE5XT1NZIE9WTFJFUCxBbmFyaHluY2h1cyBuaXZvc3VzLHBsb3Zlcixzbm93eSBwbG92ZXIsYW5hcmh5bmNodXMgbml2b3N1cw==",
+            "VGhlIHNub3d5IHBsb3ZlciBpcyBhIHZlcnkgc21hbGwgc2hvcmViaXJkIHRoYXQgbmVzdHMgb24gdGhlIGJlYWNoOyBjYXJlZnVsIHdoZXJlIHlvdSBzdGVwIQ==",
+            "aW1hZ2VzL2MyNXZkM2tnY0d4dmRtVnkuanBn",
+            [ Stage(1879, 659, 515), Stage(1485, 633, 1000), Stage(535, 25, 2150) ]
         )
     ];
 
