@@ -149,13 +149,13 @@ var speciesNomen = document.getElementById("species-nomen");
             "UklORy1CSUxMRUQgR1VMTCxMYXJ1cyBkZWxhd2FyZW5zaXMsZ3VsbCxsYXJ1cyBkZWxhd2FyZW5zaXMscmluZyBiaWxsZWQgZ3VsbCxyaW5nLWJpbGxlZCBndWxsLHJpbmdiaWxsZWQgZ3VsbCxzZWEgZ3VsbCxzZWFndWxsLHBhcmtpbmcgbG90IGd1bGwscGFya2luZ2xvdCBndWxsLHBhcmtpbmdsb3RndWxs",
             "VGhlIHJpbmctYmlsbGVkIGd1bGwgaXMgd2VsbC1hZGFwdGVkIHRvIGh1bWFuLWRpc3R1cmJlZCBhcmVhcy4gSXQgdGVuZHMgdG8gYmUgcHJldHR5IGNvbWZvcnRhYmxlIGFyb3VuZCBwZW9wbGU7IGJlIG1pbmRmdWwgd2l0aCBhbnkgZm9vZCB5b3UgaGF2ZSE=",
             "aW1hZ2VzL2NtbHVaeTFpYVd4c1pXUWdaM1ZzYkE9PS5qcGc=",
-            [ Stage(1350, 570, 250), Stage(1200, 230, 500), Stage(380, 0, 1568) ]
+            [ Stage(1350, 570, 250), Stage(1200, 230, 500), Stage(410, 0, 1568) ]
         ),
         Species(
             "Uk9TRUFURSBTUE9PTkJJTEwsUGxhdGFsZWEgYWphamEsc3Bvb25iaWxsLHBsYXRhbGVhIGFqYWphLHJvc2VhdGUgc3Bvb25iaWxs",
             "U2ltaWxhciB0byBmbGFtaW5nb3MsIHRoZSByb3NlYXRlIHNwb29uYmlsbCB0dXJucyBwaW5rIHdpdGggaXRzIGRpZXQuIEhvd2V2ZXIsIGl0IGlzIGFjdHVhbGx5IGEgcGFydCBvZiB0aGUgaWJpcyBmYW1pbHku",
             "aW1hZ2VzL2NtOXpaV0YwWlNCemNHOXZibUpwYkd3PS5qcGc=",
-            [ Stage(1924, 1070, 300), Stage(1924, 1070, 650), Stage(500, 0, 2500) ]
+            [ Stage(1924, 1070, 300), Stage(1720, 940, 1000), Stage(420, 0, 2800) ]
         ),
         Species(
             "QU1FUklDQU4gQ1JPQ09ESUxFLENyb2NvZHlsdXMgYWN1dHVzLGNyb2NvZGlsZSxjcm9jb2R5bHVzIGFjdXR1cyxhbWVyaWNhbiBjcm9jb2RpbGUsY3JvYw==",
@@ -167,7 +167,7 @@ var speciesNomen = document.getElementById("species-nomen");
             "QlJPV04gUEVMSUNBTixQZWxlY2FudXMgb2NjaWRlbnRhbGlzLHBlbGljYW4scGVsZWNhbnVzIG9jY2lkZW50YWxpcyxicm93biBwZWxpY2Fu",
             "V2l0aCBhIDcgZm9vdCB3aW5nc3BhbiwgdGhlIGJyb3duIHBlbGljYW4gaXMgc3RpbGwgdGhlIHNtYWxsZXN0IHNwZWNpZXMgb2YgcGVsaWNhbi4=",
             "aW1hZ2VzL1luSnZkMjRnY0dWc2FXTmhiZz09LmpwZw==",
-            [ Stage(1517, 1086, 450), Stage(1250, 800, 800), Stage(260, 0, 2000) ]
+            [ Stage(1517, 1086, 450), Stage(1250, 800, 800), Stage(300, 200, 2000) ]
         ),
         Species(
             "R1JFRU4gU0VBIFRVUlRMRSxDaGVsb25pYSBteWRhcyx0dXJ0bGUsY2hlbG9uaWEgbXlkYXMsc2VhIHR1cnRsZSxncmVlbiBzZWEgdHVydGxlLHNlYXR1cnRsZSxncmVlbiBzZWF0dXJ0bGUsYmxhY2sgdHVydGxlLGJsYWNrIHNlYXR1cnRsZSxibGFjayBzZWEgdHVydGxlLGF0bGFudGljIGdyZWVuIHR1cnRsZSxhdGxhbnRpYyBncmVlbiBzZWEgdHVydGxlLGF0bGFudGljIGdyZWVuIHNlYXR1cnRsZSxwYWNpZmljIGdyZWVuIHR1cnRsZSxwYWNpZmljIGdyZWVuIHNlYSB0dXJ0bGUscGFjaWZpYyBncmVlbiBzZWF0dXJ0bGU=",
