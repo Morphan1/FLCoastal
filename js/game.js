@@ -403,7 +403,6 @@ submitButton.onclick = function(event) {
         }
         submitButton.addEventListener("animationend", animationEndHandler);
     }
-    clearAnswer();
 }
 
 giveUpButton.onclick = function(event) {
