@@ -106,11 +106,10 @@ var speciesNomen = document.getElementById("species-nomen");
                 showStage(currentStage);
             },
 
-            cancelRender: function() {
+            hide: function() {
                 target = null;
                 lastTarget = null;
                 currentPosition = null;
-                // TODO: move this out of this function or rename function?
                 document.getElementById("wb-" + wordBankId).classList.remove("bad-word");
             },
 
@@ -256,7 +255,7 @@ var speciesNomen = document.getElementById("species-nomen");
     }
 
     game.nextSpecies = function () {
-        speciesList[currentSpecies].cancelRender();
+        speciesList[currentSpecies].hide();
         ++currentSpecies;
         this.show();
         if (currentSpecies === speciesList.length - 1) {
@@ -266,7 +265,7 @@ var speciesNomen = document.getElementById("species-nomen");
     }
 
     game.prevSpecies = function () {
-        speciesList[currentSpecies].cancelRender();
+        speciesList[currentSpecies].hide();
         --currentSpecies;
         this.show();
         if (currentSpecies === 0) {
@@ -286,8 +285,11 @@ answerInput.addEventListener("keyup", function(event) {
     }
 });
 
-function showDescription(result) {
+function clearAnswer() {
     answerInput.value = "";
+}
+
+function showDescription(result) {
     modalShow.style.display = "none";
     giveUpButton.style.display = "none";
     if (result.success) {
@@ -301,6 +303,7 @@ function showDescription(result) {
 }
 
 submitButton.onclick = function(event) {
+    clearAnswer();
     var result = game.checkAnswer(answerInput.value);
     if (result.success) {
         showDescription(result);
@@ -320,6 +323,7 @@ giveUpButton.onclick = function(event) {
 }
 
 goBackButton.onclick = function(event) {
+    clearAnswer();
     if (!game.prevSpecies()) {
         goBackButton.style.visibility = "hidden";
     }
@@ -328,6 +332,7 @@ goBackButton.onclick = function(event) {
 }
 
 goNextButton.onclick = function(event) {
+    clearAnswer();
     if (!game.nextSpecies()) {
         goNextButton.style.visibility = "hidden";
     }
