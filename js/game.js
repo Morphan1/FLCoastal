@@ -123,7 +123,7 @@ var speciesNomen = document.getElementById("species-nomen");
                     return Result(true, nomen, description);
                 }
                 else {
-                    if (incorrectCount < 3 && ++incorrectCount == 3) {
+                    if (incorrectCount < 3 && ++incorrectCount === 3) {
                         this.nextStage();
                     }
                     return Result(false);
