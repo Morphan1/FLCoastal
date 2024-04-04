@@ -307,7 +307,6 @@ function showDescription(result) {
 }
 
 submitButton.onclick = function(event) {
-    clearAnswer();
     var result = game.checkAnswer(answerInput.value);
     if (result.success) {
         showDescription(result);
@@ -320,6 +319,7 @@ submitButton.onclick = function(event) {
         }
         submitButton.addEventListener("animationend", animationEndHandler);
     }
+    clearAnswer();
 };
 
 giveUpButton.onclick = function(event) {
