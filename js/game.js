@@ -4,6 +4,10 @@ var canvas = document.getElementById("species-image");
 var context = canvas.getContext("2d");
 context.imageSmoothingEnabled = false;
 
+var easyButton = document.getElementById("easy-difficulty");
+var mediumButton = document.getElementById("medium-difficulty");
+var hardButton = document.getElementById("hard-difficulty");
+
 var wordBank = document.getElementById("word-bank");
 
 var answerInput = document.getElementById("answer");
@@ -22,6 +26,12 @@ var speciesNomen = document.getElementById("species-nomen");
 
 var preloadCanvas = document.createElement("canvas");
 var preloadContext = preloadCanvas.getContext("2d");
+
+var Difficulty = {
+    easy: 0,
+    medium: 1,
+    hard: 2
+};
 
 (function(game, undefined) {
     function Result(success, nomen, description) {
@@ -114,7 +124,9 @@ var preloadContext = preloadCanvas.getContext("2d");
                 target = null;
                 lastTarget = null;
                 currentPosition = null;
-                document.getElementById("wb-" + wordBankId).classList.remove("bad-word");
+                if (wordBankId > -1) {
+                    document.getElementById("wb-" + wordBankId).classList.remove("bad-word");
+                }
             },
 
             nextStage: function() {
@@ -131,8 +143,10 @@ var preloadContext = preloadCanvas.getContext("2d");
             checkAnswer: function(input) {
                 if (names.indexOf(input) > -1) {
                     this.finalStage();
-                    document.getElementById("wb-" + wordBankId).classList.remove("bad-word");
-                    document.getElementById("wb-" + wordBankId).classList.add("good-word");
+                    if (wordBankId > -1) {
+                        document.getElementById("wb-" + wordBankId).classList.remove("bad-word");
+                        document.getElementById("wb-" + wordBankId).classList.add("good-word");
+                    }
                     return Result(true, nomen, description);
                 }
                 else {
@@ -143,7 +157,7 @@ var preloadContext = preloadCanvas.getContext("2d");
                     if (this.canCheat()) {
                         giveUpButton.style.display = "block";
                     }
-                    if (incorrectCount >= 12) {
+                    if (wordBankId > -1 && incorrectCount >= 12) {
                         document.getElementById("wb-" + wordBankId).classList.add("bad-word");
                     }
                     return Result(false);
@@ -158,9 +172,16 @@ var preloadContext = preloadCanvas.getContext("2d");
                 answerInput.value = name.toLowerCase();
             },
 
-            addNameToBank: function(id) {
+            addNameToBank: function(id, scramble) {
                 wordBankId = id;
-                wordBank.innerHTML += "<p id=\"wb-" + id + "\">" + scrambledName + "</p>";
+                var toAdd;
+                if (scramble) {
+                    toAdd = scrambledName;
+                }
+                else {
+                    toAdd = name;
+                }
+                wordBank.innerHTML += "<p id=\"wb-" + id + "\">" + toAdd + "</p>";
             }
         };
     }
@@ -237,14 +258,26 @@ var preloadContext = preloadCanvas.getContext("2d");
         wordBankIndex[j] = temp;
     }
 
-    for (var i = 0; i < wordBankIndex.length; i++) {
-        speciesList[wordBankIndex[i]].addNameToBank(i);
-    }
-
     var currentSpecies = 0;
+    var difficulty = null;
 
     game.show = function() {
         speciesList[currentSpecies].show();
+    }
+
+    game.start = function(diff) {
+        if (difficulty === null) {
+            difficulty = diff;
+            if (difficulty < Difficulty.hard) {
+                for (var i = 0; i < wordBankIndex.length; i++) {
+                    speciesList[wordBankIndex[i]].addNameToBank(i, difficulty === Difficulty.medium);
+                }
+            }
+            else {
+                document.getElementById("word-bank").style.display = "none";
+            }
+            document.getElementById("title-screen").style.display = "none";
+        }
     }
 
     game.currentStatus = function() {
@@ -293,12 +326,6 @@ var preloadContext = preloadCanvas.getContext("2d");
     }
 }(window.game = window.game || {}));
 
-answerInput.addEventListener("keyup", function(event) {
-    if (event.key === "Enter") {
-        submitButton.click();
-    }
-});
-
 function clearAnswer() {
     answerInput.value = "";
 }
@@ -316,6 +343,24 @@ function showDescription(result) {
     }
 }
 
+answerInput.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        submitButton.click();
+    }
+});
+
+easyButton.onclick = function(event) {
+    game.start(Difficulty.easy);
+};
+
+mediumButton.onclick = function(event) {
+    game.start(Difficulty.medium);
+};
+
+hardButton.onclick = function(event) {    
+    game.start(Difficulty.hard);
+};
+
 submitButton.onclick = function(event) {
     var result = game.checkAnswer(answerInput.value);
     if (result.success) {
@@ -330,7 +375,7 @@ submitButton.onclick = function(event) {
         submitButton.addEventListener("animationend", animationEndHandler);
     }
     clearAnswer();
-};
+}
 
 giveUpButton.onclick = function(event) {
     game.fillAnswer();
