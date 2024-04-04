@@ -362,7 +362,15 @@ hardButton.onclick = function(event) {
 };
 
 submitButton.onclick = function(event) {
-    var result = game.checkAnswer(answerInput.value);
+    var answer = answerInput.value;
+    if (answer === null) {
+        return;
+    }
+    answer = answer.trim();
+    if (answer === "") {
+        return;
+    }
+    var result = game.checkAnswer(answer);
     if (result.success) {
         showDescription(result);
     }
