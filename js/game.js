@@ -10,6 +10,8 @@ var submitButton = document.getElementById("submit-answer");
 var goBackButton = document.getElementById("go-back");
 var goNextButton = document.getElementById("go-next");
 
+var giveUpButton = document.getElementById("give-up");
+
 var goodModal = document.getElementById("good-modal");
 var modalClose = document.getElementById("modal-close");
 var modalShow = document.getElementById("modal-show");
@@ -125,11 +127,23 @@ var speciesNomen = document.getElementById("species-nomen");
                     return Result(true, nomen, description);
                 }
                 else {
-                    if (incorrectCount < 3 && ++incorrectCount === 3) {
+                    ++incorrectCount;
+                    if (incorrectCount === 3) {
                         this.nextStage();
+                    }
+                    else if (this.canCheat()) {
+                        giveUpButton.style.display = "block";
                     }
                     return Result(false);
                 }
+            },
+
+            canCheat: function() {
+                return incorrectCount >= 6;
+            },
+
+            cheat: function() {
+                answerInput.value = name.toLowerCase();
             },
 
             addNameToBank: function() {
@@ -237,6 +251,10 @@ var speciesNomen = document.getElementById("species-nomen");
             return false;
         }
         return true;
+    },
+
+    game.fillAnswer = function() {
+        speciesList[currentSpecies].cheat();
     }
 }(window.game = window.game || {}));
 
@@ -248,6 +266,7 @@ answerInput.addEventListener("keyup", function(event) {
 
 function showDescription(result) {
     modalShow.style.display = "none";
+    giveUpButton.style.display = "none";
     if (result.success) {
         goodModal.style.display = "block";
         speciesNomen.textContent = result.nomen;
@@ -272,6 +291,10 @@ submitButton.onclick = function(event) {
         submitButton.addEventListener("animationend", animationEndHandler);
     }
 };
+
+giveUpButton.onclick = function(event) {
+    game.fillAnswer();
+}
 
 goBackButton.onclick = function(event) {
     if (!game.prevSpecies()) {

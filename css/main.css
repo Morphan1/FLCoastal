@@ -136,6 +136,21 @@ body {
         cursor: pointer;
     }
 
+#give-up {
+    display: none;
+    margin: 5px auto;
+    padding: 5px;
+    font-size: 24px;
+    background-color: orangered;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: #00000033 0 3px 5px -1px;
+    cursor: pointer;
+    animation-name: fade-in;
+    animation-duration: 10s;
+    text-align: center;
+}
+
 .modal {
     display: none;
     z-index: 1;
@@ -208,6 +223,7 @@ body {
 
     .primary-column {
         display: block;
+        position: absolute;
         width: 100%;
     }
 
@@ -217,6 +233,10 @@ body {
 
     .go-next, .go-back {
         font-size: 36px;
+    }
+
+    #give-up {
+        font-size: 12px;
     }
 
     .modal-content {
@@ -309,5 +329,23 @@ body {
     to {
         right: 0;
         opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
 }
