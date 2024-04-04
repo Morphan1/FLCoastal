@@ -260,7 +260,6 @@ body {
 
 .modal-content {
     position: fixed;
-    z-index: 4;
 }
 
 #info-box {
@@ -268,6 +267,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: #00000066;
+    z-index: 4;
 }
 
 #info-box .modal-content {
