@@ -266,6 +266,7 @@ answerInput.addEventListener("keyup", function(event) {
 });
 
 function showDescription(result) {
+    answerInput.value = "";
     modalShow.style.display = "none";
     giveUpButton.style.display = "none";
     if (result.success) {
