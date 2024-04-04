@@ -129,7 +129,7 @@ var preloadContext = preloadCanvas.getContext("2d");
             },
 
             checkAnswer: function(input) {
-                if (names.indexOf(input.toLowerCase()) > -1) {
+                if (names.indexOf(input) > -1) {
                     this.finalStage();
                     document.getElementById("wb-" + wordBankId).classList.remove("bad-word");
                     document.getElementById("wb-" + wordBankId).classList.add("good-word");
@@ -252,6 +252,16 @@ var preloadContext = preloadCanvas.getContext("2d");
     }
 
     game.checkAnswer = function(input) {
+        input = input.replace(/\s+/g, " ").trim().toLowerCase();
+        if (input.startsWith("a ")) {
+            input = input.substring(2);
+        }
+        if (input.startsWith("an ")) {
+            input = input.substring(3);
+        }
+        if (input.startsWith("the ")) {
+            input = input.substring(4);
+        }
         if (!successStatus[currentSpecies].success) {
             successStatus[currentSpecies] = speciesList[currentSpecies].checkAnswer(input);
         }
