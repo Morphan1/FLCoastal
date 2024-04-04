@@ -46,6 +46,8 @@ var speciesNomen = document.getElementById("species-nomen");
 
         var currentStage = 0;
 
+        var incorrectCount = 0;
+
         var lastTarget = null;
         var target = null;
         var currentPosition = null;
@@ -121,6 +123,9 @@ var speciesNomen = document.getElementById("species-nomen");
                     return Result(true, nomen, description);
                 }
                 else {
+                    if (incorrectCount < 3 && ++incorrectCount == 3) {
+                        this.nextStage();
+                    }
                     return Result(false);
                 }
             }
