@@ -46,16 +46,16 @@ body {
 }
 
 #word-bank {
-    width: 80%;
-    height: 80%;
+    width: 50%;
     margin-left: 10%;
-    right: 10%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    background-color: #f1f1f1;
-    color: #808080;
+    margin-top: 20%;
+    background-color: #e7dcd0aa;
     text-align: center;
 }
+
+    #word-bank h1 {
+        border-bottom: 1px solid black;
+    }
 
     #word-bank p {
         padding-bottom: 5px;
@@ -67,6 +67,11 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+    .species-viewport h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
 
 #species-image {
     border-radius: 100%;
