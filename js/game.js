@@ -51,6 +51,7 @@ var speciesNomen = document.getElementById("species-nomen");
 
         var currentStage = 0;
 
+        var wordBankId = -1;
         var incorrectCount = 0;
 
         var lastTarget = null;
@@ -109,6 +110,8 @@ var speciesNomen = document.getElementById("species-nomen");
                 target = null;
                 lastTarget = null;
                 currentPosition = null;
+                // TODO: move this out of this function or rename function?
+                document.getElementById("wb-" + wordBankId).classList.remove("bad-word");
             },
 
             nextStage: function() {
@@ -125,6 +128,8 @@ var speciesNomen = document.getElementById("species-nomen");
             checkAnswer: function(input) {
                 if (names.indexOf(input.toLowerCase()) > -1) {
                     this.finalStage();
+                    document.getElementById("wb-" + wordBankId).classList.remove("bad-word");
+                    document.getElementById("wb-" + wordBankId).classList.add("good-word");
                     return Result(true, nomen, description);
                 }
                 else {
@@ -132,8 +137,11 @@ var speciesNomen = document.getElementById("species-nomen");
                     if (incorrectCount === 3) {
                         this.nextStage();
                     }
-                    else if (this.canCheat()) {
+                    if (this.canCheat()) {
                         giveUpButton.style.display = "block";
+                    }
+                    if (incorrectCount >= 12) {
+                        document.getElementById("wb-" + wordBankId).classList.add("bad-word");
                     }
                     return Result(false);
                 }
@@ -148,6 +156,7 @@ var speciesNomen = document.getElementById("species-nomen");
             },
 
             addNameToBank: function(id) {
+                wordBankId = id;
                 wordBank.innerHTML += "<p id=\"wb-" + id + "\">" + scrambledName + "</p>";
             }
         };
@@ -241,11 +250,7 @@ var speciesNomen = document.getElementById("species-nomen");
 
     game.checkAnswer = function(input) {
         if (!successStatus[currentSpecies].success) {
-            var result = speciesList[currentSpecies].checkAnswer(input);
-            if (result.success) {
-                document.getElementById("wb-" + wordBankIndex.indexOf(currentSpecies)).classList.add("good-word");
-            }
-            successStatus[currentSpecies] = result;
+            successStatus[currentSpecies] = speciesList[currentSpecies].checkAnswer(input);
         }
         return successStatus[currentSpecies];
     }

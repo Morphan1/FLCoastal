@@ -66,6 +66,12 @@ body {
     text-decoration: line-through;
 }
 
+.bad-word {
+    animation-name: flash-word;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
 .species-viewport {
     display: block;
     margin-left: auto;
@@ -352,5 +358,41 @@ body {
     }
     100% {
       opacity: 1;
+    }
+}
+
+@-webkit-keyframes flash-word {
+    20% {
+        background-color: #ff4500aa;
+    }
+    40% {
+        background-color: #ff450077;
+    }
+    60% {
+        background-color: #ff450077;
+    }
+    80% {
+        background-color: #00000000;
+    }
+    100% {
+        background-color: #ff450077;
+    }
+}
+
+@keyframes flash-word {
+    20% {
+        background-color: #ff450077;
+    }
+    40% {
+        background-color: #00000000;
+    }
+    60% {
+        background-color: #ff450077;
+    }
+    80% {
+        background-color: #00000000;
+    }
+    100% {
+        background-color: #ff450077;
     }
 }
