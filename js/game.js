@@ -243,6 +243,24 @@ var Difficulty = {
             "VGhlIHNub3d5IHBsb3ZlciBpcyBhIHZlcnkgc21hbGwgc2hvcmViaXJkIHRoYXQgbmVzdHMgb24gdGhlIGJlYWNoOyBjYXJlZnVsIHdoZXJlIHlvdSBzdGVwIQ==",
             "aW1hZ2VzL2MyNXZkM2tnY0d4dmRtVnkuanBn",
             [ Stage(1879, 659, 515), Stage(1485, 633, 1000), Stage(535, 25, 2150) ]
+        ),
+        Species(
+            "U0VBR1JBUEUsRUFTUEVSR0EsQ29jY29sb2JhIHV2aWZlcmEsc2VhZ3JhcGUsY29jY29sb2JhIHV2aWZlcmEsc2VhIGdyYXBlLHNlYSBncmFwZXMsc2VhZ3JhcGVz",
+            "VGhlIGZydWl0cyBvZiB0aGUgc2VhZ3JhcGUgbWF5IG5vdCBiZSB0cnVlIGdyYXBlcywgYnV0IHRoZXkgYXJlIGVkaWJsZS4gVGhlIHBsYW50IGhhcyBtYW55IHVzZXMgZm9yIG1hbiBhbmQgbmF0dXJlLCBpbmNsdWRpbmcgYmxvY2tpbmcgbGlnaHQgcG9sbHV0aW9uIGZvciBuZXdseSBoYXRjaGVkIHNlYSB0dXJ0bGVzLg==",
+            "aW1hZ2VzL2MyVmhJR2R5WVhCbC5qcGc=",
+            [ Stage(2769, 1401, 500), Stage(2377, 1061, 1250), Stage(1489, 17, 3000) ]
+        ),
+        Species(
+            "RklERExFUiBDUkFCLExESVJERUYgQVJCQyxVY2EgcHVnaWxhdG9yLGZpZGRsZXIgY3JhYixmaWRkbGVyLHVjYSBwdWdpbGF0b3IsbGVwdHVjYSBwYW5hY2VhLGNyYWIsY2FsbGluZyBjcmFiLGF0bGFudGljIHNhbmQgZmlkZGxlcixhdGxhbnRpYyBzYW5kIGZpZGRsZXIgY3JhYixndWxmIHNhbmQgZmlkZGxlcixndWxmIHNhbmQgZmlkZGxlciBjcmFiLHBhbmFjZWEgc2FuZCBmaWRkbGVyLHBhbmFjZWEgc2FuZCBmaWRkbGVyIGNyYWI=",
+            "R3Jvd2luZyB1cCB0byAyIGluY2hlcywgdGhlIGZpZGRsZXIgY3JhYiBpcyByYXRoZXIgc21hbGwuIFRoZSBtYWxlIGhhcyBvbmUgY2xhdyBtdWNoIGxhcmdlciB0aGFuIHRoZSBvdGhlciwgYW5kIHdpbGwgcGVyZm9ybSBhIHdhdmluZyBkaXNwbGF5IHdpdGggdGhlIGJpZyBjbGF3IHRvIGF0dHJhY3QgbWF0ZXMu",
+            "aW1hZ2VzL1ptbGtaR3hsY2lCamNtRmkuanBn",
+            [ Stage(788, 687, 330), Stage(727, 487, 730), Stage(641, 31, 2000) ]
+        ),
+        Species(
+            "RElBTU9OREJBQ0sgVEVSUkFQSU4sTUlEQU5CT0tEQ0EgRVJQQU5JVFIsTWFsYWNsZW15cyB0ZXJyYXBpbixkaWFtb25kYmFjayB0ZXJyYXBpbixkaWFtb25kYmFjayx0ZXJyYXBpbixtYWxhY2xlbXlzIHRlcnJhcGluLHR1cnRsZQ==",
+            "VGhlIGRpYW1vbmRiYWNrIHRlcnJhcGluIGlzIHRoZSBvbmx5IGJyYWNraXNoIHdhdGVyIHR1cnRsZSBmb3VuZCBpbiB0aGUgVW5pdGVkIFN0YXRlcy4gRml2ZSBzdWJzcGVjaWVzIGFyZSBmb3VuZCBpbiBGbG9yaWRhLCB0aHJlZSBvZiB3aGljaCBhcmUgZm91bmQgbm8gd2hlcmUgZWxzZS4=",
+            "aW1hZ2VzL1pHbGhiVzl1WkdKaFkyc2dkR1Z5Y21Gd2FXND0uanBn",
+            [ Stage(657, 921, 650), Stage(335, 627, 1000), Stage(250, 0, 2500) ]
         )
     ];
 
